@@ -1,0 +1,74 @@
+{
+  "name": "job_applications",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["jobId", "applicantId", "status", "appliedAt"],
+        "properties": {
+          "jobId": {
+            "bsonType": "string",
+            "description": "ID of the job being applied to"
+          },
+          "applicantId": {
+            "bsonType": "string",
+            "description": "ID of the user applying"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["pending", "reviewing", "interview", "rejected", "accepted"],
+            "description": "Application status"
+          },
+          "coverLetter": {
+            "bsonType": "string",
+            "description": "Applicant's cover letter"
+          },
+          "resumeUrl": {
+            "bsonType": "string",
+            "description": "URL to uploaded resume"
+          },
+          "experience": {
+            "bsonType": "string",
+            "description": "Relevant experience summary"
+          },
+          "expectedSalary": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Expected salary"
+          },
+          "availableFrom": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Availability start date"
+          },
+          "notes": {
+            "bsonType": "string",
+            "description": "Additional notes from applicant"
+          },
+          "interviewDate": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Scheduled interview date"
+          },
+          "feedback": {
+            "bsonType": "string",
+            "description": "Feedback from employer"
+          },
+          "appliedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Application submission timestamp"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Last update timestamp"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

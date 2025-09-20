@@ -1,0 +1,103 @@
+{
+  "name": "user_profiles",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["userId", "createdAt"],
+        "properties": {
+          "userId": {
+            "bsonType": "string",
+            "description": "User ID linked to authentication system"
+          },
+          "firstName": {
+            "bsonType": "string",
+            "description": "User's first name"
+          },
+          "lastName": {
+            "bsonType": "string",
+            "description": "User's last name"
+          },
+          "title": {
+            "bsonType": "string",
+            "description": "Professional title"
+          },
+          "bio": {
+            "bsonType": "string",
+            "description": "Professional bio"
+          },
+          "location": {
+            "bsonType": "string",
+            "description": "User location"
+          },
+          "phone": {
+            "bsonType": "string",
+            "description": "Phone number"
+          },
+          "website": {
+            "bsonType": "string",
+            "description": "Personal website or portfolio"
+          },
+          "avatar": {
+            "bsonType": "string",
+            "description": "Profile picture URL"
+          },
+          "skills": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Professional skills"
+          },
+          "experience": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object"
+            },
+            "description": "Work experience history"
+          },
+          "education": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "object"
+            },
+            "description": "Education history"
+          },
+          "preferences": {
+            "bsonType": "object",
+            "description": "Job preferences and settings"
+          },
+          "resumeUrl": {
+            "bsonType": "string",
+            "description": "URL to uploaded resume"
+          },
+          "socialLinks": {
+            "bsonType": "object",
+            "description": "Social media and professional links"
+          },
+          "isPublic": {
+            "bsonType": "bool",
+            "description": "Profile visibility setting"
+          },
+          "seekingJob": {
+            "bsonType": "bool",
+            "description": "Currently seeking job opportunities"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Profile creation timestamp"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Last update timestamp"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

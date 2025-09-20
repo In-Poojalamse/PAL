@@ -1,0 +1,112 @@
+{
+  "name": "jobs",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["title", "company", "location", "employmentType", "salaryMin", "salaryMax", "description", "requirements", "postedBy", "createdAt"],
+        "properties": {
+          "title": {
+            "bsonType": "string",
+            "minLength": 3,
+            "maxLength": 100,
+            "description": "Job title"
+          },
+          "company": {
+            "bsonType": "string",
+            "minLength": 2,
+            "maxLength": 100,
+            "description": "Company name"
+          },
+          "location": {
+            "bsonType": "string",
+            "description": "Job location"
+          },
+          "employmentType": {
+            "bsonType": "string",
+            "enum": ["full-time", "part-time", "contract", "internship", "remote"],
+            "description": "Employment type"
+          },
+          "salaryMin": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Minimum salary"
+          },
+          "salaryMax": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Maximum salary"
+          },
+          "description": {
+            "bsonType": "string",
+            "minLength": 50,
+            "description": "Job description"
+          },
+          "requirements": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Job requirements list"
+          },
+          "benefits": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Job benefits"
+          },
+          "skills": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Required skills"
+          },
+          "category": {
+            "bsonType": "string",
+            "enum": ["technology", "marketing", "sales", "design", "finance", "hr", "operations", "other"],
+            "description": "Job category"
+          },
+          "experienceLevel": {
+            "bsonType": "string",
+            "enum": ["entry", "mid", "senior", "executive"],
+            "description": "Required experience level"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["active", "closed", "draft"],
+            "description": "Job posting status"
+          },
+          "applicationDeadline": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Application deadline"
+          },
+          "postedBy": {
+            "bsonType": "string",
+            "description": "User ID of job poster"
+          },
+          "applicationsCount": {
+            "bsonType": "int",
+            "minimum": 0,
+            "description": "Number of applications received"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Job creation timestamp"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Last update timestamp"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

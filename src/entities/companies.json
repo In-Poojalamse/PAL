@@ -1,0 +1,104 @@
+{
+  "name": "companies",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["name", "industry", "size", "location", "description", "createdBy", "createdAt"],
+        "properties": {
+          "name": {
+            "bsonType": "string",
+            "minLength": 2,
+            "maxLength": 100,
+            "description": "Company name"
+          },
+          "industry": {
+            "bsonType": "string",
+            "enum": ["technology", "finance", "healthcare", "education", "retail", "manufacturing", "consulting", "other"],
+            "description": "Company industry"
+          },
+          "size": {
+            "bsonType": "string",
+            "enum": ["startup", "small", "medium", "large", "enterprise"],
+            "description": "Company size"
+          },
+          "location": {
+            "bsonType": "string",
+            "description": "Company headquarters location"
+          },
+          "description": {
+            "bsonType": "string",
+            "minLength": 50,
+            "description": "Company description"
+          },
+          "website": {
+            "bsonType": "string",
+            "description": "Company website URL"
+          },
+          "logo": {
+            "bsonType": "string",
+            "description": "Company logo URL"
+          },
+          "foundedYear": {
+            "bsonType": "int",
+            "minimum": 1800,
+            "maximum": 2025,
+            "description": "Year company was founded"
+          },
+          "employees": {
+            "bsonType": "int",
+            "minimum": 1,
+            "description": "Number of employees"
+          },
+          "benefits": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Company benefits"
+          },
+          "culture": {
+            "bsonType": "array",
+            "items": {
+              "bsonType": "string"
+            },
+            "description": "Company culture values"
+          },
+          "contactEmail": {
+            "bsonType": "string",
+            "description": "Contact email"
+          },
+          "contactPhone": {
+            "bsonType": "string",
+            "description": "Contact phone number"
+          },
+          "socialLinks": {
+            "bsonType": "object",
+            "description": "Social media links"
+          },
+          "verified": {
+            "bsonType": "bool",
+            "description": "Company verification status"
+          },
+          "createdBy": {
+            "bsonType": "string",
+            "description": "User ID of company creator"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Company profile creation timestamp"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Last update timestamp"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
