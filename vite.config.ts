@@ -27,6 +27,10 @@ export default defineConfig(({ mode }) => {
       '__DEV__': 'true',
     }
   }
+  
+  server: {
+  allowedHosts: true
+}
 
   return {
     plugins: [react()],
